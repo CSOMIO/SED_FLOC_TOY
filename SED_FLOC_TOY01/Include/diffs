@@ -1,0 +1,78 @@
+11,13c11,13
+< ** Application flag:   BIO_TOY
+< ** Input script:       ocean_bio_toy.in
+< **                     bioFennel.in, ecosim.in, npzd_Franks.in, npzd_Powell.in
+---
+> ** Application flag:   SED_TOY
+> ** Input script:       ocean_sed_toy.in
+> **                     sediment.in
+16a17
+> #define SED_TOY
+20c21
+< #define UV_QDRAG
+---
+> #undef UV_QDRAG
+24,25c25,27
+< #define TS_U3HADVECTION
+< #define TS_C4VADVECTION
+---
+> #undef TS_U3HADVECTION
+> #undef TS_C4VADVECTION
+> #define TS_MPDATA
+32c34
+< #define LMD_MIXING
+---
+> #undef LMD_MIXING
+41a44,61
+> #define SSW_BBL
+> #ifdef SSW_BBL
+> # define  SSW_CALC_UB
+> # define SSW_CALC_ZNOT
+> # define SSW_LOGINT
+> #endif
+> 
+> #define GLS_MIXING
+> #ifdef GLS_MIXING
+> # define KANTHA_CLAYSON
+> # define N2S2_HORAVG
+> # undef  CRAIG_BANNER
+> # undef  CHARNOK
+> # undef  ZOS_HSIG
+> # undef  TKE_WAVEDISS
+> #endif
+> 
+> 
+53a74,100
+> #define ANA_SPFLUX
+> #define ANA_BPFLUX
+> 
+> /*
+> **  Sediment model options.
+> */
+> 
+> #define SEDIMENT
+> #ifdef SEDIMENT
+> # define SUSPLOAD
+> # undef  BEDLOAD_SOULSBY
+> # undef  BEDLOAD_MPM
+> # define SED_DENS
+> # undef  COHESIVE_BED
+> # undef  BF_TCR
+> # undef  LINEAR_TCR
+> # undef  POWERLAW_TCR
+> # define MIXED_BED
+> # undef  SED_MORPH
+> # define SED_FLOCS
+> # undef  FLOC_TURB_DISS
+> # define FLOC_BBL_DISS
+> # define SED_DEFLOC
+> # define SED_TAU_CD_CONST
+> # undef  SED_TAU_CD_LIN
+> # undef  SED_BIODIFF
+> #endif
+56a104
+> **  Undefined all of these
+59c107
+< #define BIO_FENNEL
+---
+> #undef BIO_FENNEL
