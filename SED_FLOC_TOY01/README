@@ -1,0 +1,33 @@
+SED_FLOC_TOY01
+Set up for CSOMIO model runs
+July 11, 2018
+ckharris@vims.edu
+
+Notes about this model run:
+o  One-dimensional, vertical version of COAWST.
+o  Used Version COAWST Release from July 9, 2018.
+o  Vertical grid: 
+   50m deep
+   30 evenly spaced grid cells.
+   dz = 1.6667 m.
+   Horizontal grid: 6x6 Uniform.
+o  Forcing:   
+   Temperature and salinity strongly nudged to measured values.
+   Winds are input, but don’t seem to force the flow.
+   Current velocities vary from about +- 20 cm/s.
+   Waves are “on” but too small to matter for bed stress.  They are
+   held constant in time. 
+o  Sediment input:
+   Includes 15 cohesive floc sizes, and 4 non-cohesive sand sizes.
+   No external sources of sediment aside from bed resuspension.
+   Shear stresses are not strong enough to suspend them.
+
+o  Put the source code under the CSOMIO Git-Hub repository under
+   “COAWST”.  This is a straight fork from John Warner’s latest version
+   (July 9, 2018). 
+
+o  Put the model implementation files under the CSOMIO Git-Hub
+   repository under “SED_FLOC_TOY/SED_FLOC_TOY01”. This includes the
+   -  input and configuration files (under External and Internal),  
+      the build script (coawst.bash)
+   -  model log file and output (*.out and Results History File).
