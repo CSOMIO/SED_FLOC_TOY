@@ -31,3 +31,14 @@ o  Put the model implementation files under the CSOMIO Git-Hub
    -  input and configuration files (under External and Internal),  
       the build script (coawst.bash)
    -  model log file and output (*.out and Results History File).
+
+
+Notes July 12:  Next steps with this model run seem to be 
+o  adding sediment.  I think this could be done by nudging the
+   sediment concentrations to a climatological value? or by have a
+   source of sediment at the top of the water column? 
+o  another thing that might be good to do is to stabilize the
+   currents. Right now, I think that they are initialized and then
+   impacted by the wind forcing.  The run that initializes them from
+   rest seems to do better.  But, it might be nice to nudge the
+   currents to some value that we want.
