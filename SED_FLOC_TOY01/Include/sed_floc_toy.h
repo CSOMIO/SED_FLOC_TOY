@@ -68,6 +68,7 @@
 # define ANA_STFLUX
 #endif
 
+#define ANA_STFLUX
 #define ANA_SSFLUX
 #define ANA_BSFLUX
 #define ANA_BTFLUX
